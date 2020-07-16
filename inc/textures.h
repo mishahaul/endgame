@@ -1,0 +1,82 @@
+#ifndef TEXTURES_H
+#define TEXTURES_H
+
+#include "DEC2020.h"
+
+typedef struct s_gamestate t_gamestate;
+
+enum e_textures {
+    TEX_BACKGROUND_START,
+    TEX_BACKGROUND_START_CLICKED,
+    TEX_BACKGROUND_START_LEADERBOARD_CLICKED,
+    TEX_BACKGROUND_START_QUIT_CLICKED,
+    TEX_BACKGROUND_BATTLE,
+    TEX_BACKGROUND_GAMEOVER,
+    TEX_BACKGROUND_GAMEOVER_RETRY,
+    TEX_BACKGROUND_GAMEOVER_LEADER,
+    TEX_BACKGROUND_GAMEOVER_MENU,
+    TEX_BACKGROUND_GAMEOVER_TYPE,
+    TEX_LEADERBOARD,
+    TEX_TERGET,
+    TEX_TANK1_0,
+    TEX_TANK1_1,
+    TEX_TANK2_0,
+    TEX_TANK2_1,
+    TEX_TANK3_0,
+    TEX_TANK3_1,
+    TEX_TOWER1_1,
+    TEX_TOWER1_2,
+    TEX_TOWER1_3,
+    TEX_TOWER2_1,
+    TEX_TOWER2_2,
+    TEX_TOWER2_3,
+    TEX_TOWER3_1,
+    TEX_TOWER3_2,
+    TEX_TOWER3_3,
+    TEX_ENEMY0,
+    TEX_ENEMY0_1,
+    TEX_ENEMY0_DEATH1,
+    TEX_ENEMY0_DEATH2,
+    TEX_ENEMY0_DEATH3,
+    TEX_ENEMY0_DEATH4,
+    TEX_ENEMY0_DEATH5,
+    TEX_ENEMY0_DEATH6,
+    TEX_ENEMY0_DEATH7,
+    TEX_ENEMY0_DEATH8,
+    TEX_ENEMY0_DEATH9,
+    TEX_ENEMY1,
+    TEX_ENEMY1_1,
+    TEX_ENEMY1_DEATH1,
+    TEX_ENEMY1_DEATH2,
+    TEX_ENEMY1_DEATH3,
+    TEX_ENEMY1_DEATH4,
+    TEX_ENEMY1_DEATH5,
+    TEX_ENEMY1_DEATH6,
+    TEX_ENEMY1_DEATH7,
+    TEX_ENEMY1_DEATH8,
+    TEX_ENEMY1_DEATH9,
+    TEX_ENEMY2,
+    TEX_ENEMY2_1,
+    TEX_ENEMY2_DEATH1,
+    TEX_ENEMY2_DEATH2,
+    TEX_ENEMY2_DEATH3,
+    TEX_ENEMY2_DEATH4,
+    TEX_ENEMY2_DEATH5,
+    TEX_ENEMY2_DEATH6,
+    TEX_ENEMY2_DEATH7,
+    TEX_ENEMY2_DEATH8,
+    TEX_ENEMY2_DEATH9,
+    TEX_BULLET1
+};
+
+// typedef struct s_textures {
+//     enum e_textures tex_deskr;
+//     SDL_Texture *texture;
+//     t_textures *next;
+// } t_textures;
+
+SDL_Texture **mx_init_textures(SDL_Renderer *renderer);
+void mx_free_textures(SDL_Texture **tex);
+SDL_Texture *mx_get_texture(t_gamestate *game, enum e_textures deskr);
+
+#endif
